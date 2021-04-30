@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Input from "../../Components/Input";
+import "./Home.css";
 
 export default function Home() {
     const [options, setOptions] = useState([]);
