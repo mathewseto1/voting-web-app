@@ -1,8 +1,9 @@
 import TinderCard from "react-tinder-card";
+import "./Vote.css";
 
 function Vote(){
     const question = "Dummy question";
-    options = ["Option 1", "Option 2"];
+    const options = ["Option 1", "Option 2"];
 
     const handleSwipe = (direction, card) => {
         if (direction === "right") {
@@ -33,3 +34,4 @@ function Vote(){
         </div>
     )
 }
+export default Vote()

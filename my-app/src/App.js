@@ -1,5 +1,6 @@
 import './App.css';
-import Home from "./Pages/Home/Home"
+import Home from "./Pages/Home/Home";
+import Vote from "./Pages/Vote/Vote";
 
 function App() {
   return (
