@@ -1,7 +1,10 @@
-import "./Summary.css"
+import "./Summary.css";
+import { useHistory, useParams } from 'react-router-dom';
+
 
 function Summary(){
 
+    // const { code } = useParams()
     const code = "sdfsdf";
     const question = "Question";
     const options = [

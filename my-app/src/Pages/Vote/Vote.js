@@ -1,9 +1,12 @@
 import TinderCard from "react-tinder-card";
 import "./Vote.css";
+import { useHistory, useParams } from 'react-router-dom';
 
 function Vote(){
+    const { code } = useParams()
     const question = "Dummy question";
     const options = ["Option 1", "Option 2"];
+    // const history = useHistory();
 
     const handleSwipe = (direction, card) => {
         if (direction === "right") {
