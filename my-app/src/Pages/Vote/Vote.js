@@ -45,6 +45,7 @@ function Vote(){
             
             <div className = "cardContainer">
                 {data?.options.map((option_available) => (
+                
                 <TinderCard
                     key = {option_available}
                     cardName = "card"
