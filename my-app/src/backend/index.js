@@ -58,7 +58,7 @@ app.post('/:code', (req, res) => {//post used for lobby
         return
     }
 
-    lobbies[code].results.nap((item) => {
+    lobbies[code].results.map((item) => {
         if(item.name === option) {
             item.votes++
         }

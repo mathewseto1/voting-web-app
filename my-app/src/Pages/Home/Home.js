@@ -1,11 +1,29 @@
 import { useState } from "react";
 import Input from "../../Components/Input";
 import "./Home.css";
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Home() {
-    const [options, setOptions] = useState([]);
-    const [question, setQuestion] = useState("");
-    const [option, setOption] = useState("");
+
+    const history = useHistory()
+    const [options, setOptions] = useState([])
+    const [question, setQuestion] = useState("")
+    const [option, setOption] = useState("")
+    
+    const handleSubmit = () => {
+        axios.post(
+            'http://localhost:3001/create',
+            {
+                question,
+                options,
+            },
+        ).then (res =>{
+            history.push('/stats/' + res.data)
+        }).catch(err => {
+            alert(err)
+        })
+    }
 
     return (
         <div className="homeContainer">
@@ -36,13 +54,17 @@ export default function Home() {
 
                 <ul>
                     {options.map((o) => (
-                        <li className="listItem" key={o}>
+                        <li className="listItem" key={o} onClick={() =>
+                            setOptions(
+                                options.filter((option) => o !== option),
+                            )
+                        }>
                             {o}
                         </li>
                     ))}
                 </ul>
 
-                <button className="createButton">Create Poll</button>
+                <button className="createButton" onClick={handleSubmit}>Create Poll</button>
             </div>
         </div>
     );
